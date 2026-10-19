@@ -1,9 +1,12 @@
 #!/bin/sh
+cd "${0%/*}" || exit                            # Run from this directory
+targetType=libso                                # Default target type
+. "${WM_PROJECT_DIR:?}"/wmake/scripts/AllwmakeParseArguments
+#------------------------------------------------------------------------------
+# Install locations are controlled by FOAM_MODULE_PREFIX (or -prefix=...).
+# Standalone build: user locations ($FOAM_USER_LIBBIN).
+# Built as an OpenFOAM plugin: project locations ($FOAM_LIBBIN).
 
-wmake libso
+wmake $targetType
 
-#
-#END-OF-FILE
-#
-
-
+#------------------------------------------------------------------------------

@@ -6,6 +6,20 @@ The main advantage of the proposed model is its dependence on a single input par
 * Set turbulence model: RASModel dynamicRekEpsilon;
 * Set Reynolds number: Re 15000;
 
+# Building
+
+This branch is laid out as an OpenFOAM (openfoam.com) plugin.
+
+- Standalone build into user locations (`$FOAM_USER_LIBBIN`):
+  ```bash
+  ./Allwmake
+  ```
+- As a plugin: place (or add as a git submodule) this repository in
+  `$WM_PROJECT_DIR/plugins/dynamicReTurbulenceModel` and run `./Allwmake-plugins` from
+  `$WM_PROJECT_DIR`. It is then installed into `$FOAM_LIBBIN`.
+- Custom location:
+  `./Allwmake -prefix=user|group|openfoam|/some/path`
+
 # For citation
 If you have found the library useful for your research, please cite next sources:
 
