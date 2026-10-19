@@ -1,4 +1,4 @@
 TurbulenceModels/makeTurbModels.C
 
-LIB = $(FOAM_USER_LIBBIN)/libdynamicReTurbModel
+LIB = $(FOAM_MODULE_LIBBIN)/libdynamicReTurbModel
 
